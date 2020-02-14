@@ -1,0 +1,44 @@
+label {
+	color: #000033;
+	font-size: 25px;
+	line-height: 2.5em;
+	font-weight: 800;
+	display: inline-block;
+	width: 210px;
+	text-align: right;
+}
+
+#login {
+	color: #000033;
+	align-content: center;
+	position: relative;
+	margin-right: 16px;
+	left: 100px;
+	top: 10px;
+}
+
+h1 {
+	color: #000033;
+	padding-left: 110px;
+	text-decoration: underline;
+	text-decoration-color: green;
+	position: relative;
+	margin-top: 10%;
+}
+
+body {
+	background-color: #d1d1e0;
+	font-style: italic;
+	background-image: url("../images/loginbg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.loginbox {
+	width: 50%;
+	padding-top: 1px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	margin-top: 0%;
+}

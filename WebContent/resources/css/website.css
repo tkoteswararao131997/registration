@@ -1,0 +1,18 @@
+table{
+	width:100%
+}
+.heading{
+	background-color: #ccffff;
+}
+body{
+	background-image: url("../images/cropfinal.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.data{
+	color: black;
+}
+#logout{
+	color:navy;
+	margin-top: 5%;
+}
