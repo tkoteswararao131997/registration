@@ -22,20 +22,30 @@
 			response.sendRedirect("login.jsp");
 		}
 	%> 
-	
-		
-			<%! public static int k =0,q=2;
-			%>
 		<%
+			String page1=request.getParameter("page");
+			if(page1==null)
+			page1="1";
+			int pageno=Integer.parseInt(page1)-1;
+			int k=0;
+			if(pageno>0)
+			{
+				while(pageno>0)
+				{
+					k=k+2;
+					pageno--;
+				}
+			}
+			System.out.print(pageno+" "+k);
 			loginDoa doa=new loginDoa();
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "kevin", "password");
-			PreparedStatement st = con.prepareStatement("select * from inventory");
-			ResultSet rs = st.executeQuery("select * from inventory");
+			PreparedStatement st = con.prepareStatement("select * from inventory limit ?,3");
+			st.setInt(1,k);
+			ResultSet rs = st.executeQuery();
 			String name=(String)session.getAttribute("username");
 			if(name.equals("koti"))
 			{
-			rs=st.executeQuery("select * from inventory limit "+k+","+q); 
 			boolean b=rs.next();
 			if(b==true)
 			{
@@ -61,7 +71,6 @@
 			}
 			else
 			{
-				k=0;
 				out.println("there is no data to access");
 			}
 			while (rs.next()) 
@@ -75,7 +84,6 @@
 				</tr>
 			<%
 			}
-				k=k+2;
 			}
 			
 			
@@ -114,7 +122,10 @@
 		<% 
 		out.print("</br></br></br><a href='website.jsp?page=1'>1</a> ");  
         out.print("<a href='website.jsp?page=2'>2</a>  ");  
-        out.print("<a href='website.jsp?page=3'>3</a> ");  
+        out.print("<a href='website.jsp?page=3'>3</a> ");
+        out.print("<a href='website.jsp?page=4'>4</a> "); 
+        out.print("<a href='website.jsp?page=5'>5</a> "); 
+        out.print("<a href='website.jsp?page=6'>6</a> "); 
 		%>
 		</div>
 		<%
